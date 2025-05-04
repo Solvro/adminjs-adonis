@@ -156,7 +156,7 @@ class Resource extends BaseResource {
 
       if (property.type() === 'uuid' || property.isId() || property.type() === 'boolean') {
         query.where(key, filterElement.value as string)
-      } else if (property.type() === 'string') {
+      } else if (property.type() === 'string' || property.type() === 'textarea') {
         const dialect = this.databaseType()
 
         if (dialect === 'postgres') {
